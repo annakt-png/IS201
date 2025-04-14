@@ -1,0 +1,85 @@
+/* General Body Style */
+body {
+    font-family: 'Comic Sans MS', 'Segoe UI', cursive, sans-serif;
+    background-color: #ffeef8; /* light pink background */
+    color: #444;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Style */
+header {
+    background-color: #ffb6c1; /* pastel pink */
+    color: #ffffff;
+    padding: 25px;
+    text-align: center;
+    border-bottom: 5px dotted #ff69b4;
+    border-radius: 0 0 20px 20px;
+}
+
+/* Main Content Styling */
+main {
+    padding: 30px;
+    max-width: 800px;
+    margin: auto;
+    background-color: #fff0f5; /* light lavender */
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(255, 182, 193, 0.4);
+}
+
+/* Header 2 (h2) Styling */
+h2 {
+    color: #ff69b4; /* hot pink */
+    font-size: 28px;
+    margin-top: 0;
+    text-shadow: 1px 1px 2px #ffa6c9;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    background-color: #fce4ec; /* blush pink */
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 14px;
+    color: #888;
+    border-top: 3px dashed #ffb6c1;
+}
+
+/* Centering Images */
+img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%; /* Ensure images don't overflow */
+}
+/* Style the buttons */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #ff69b4; /* hot pink */
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px; /* rounded corners */
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Hover effect */
+.button:hover {
+    background-color: #ff1493; /* deeper pink */
+    transform: scale(1.1); /* button enlarges slightly */
+}
+
+/* Focused (clicked) state */
+.button:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 20, 147, 0.5); /* glowing outline */
+}
+
+/* Active (on-click) state */
+.button:active {
+    transform: scale(0.98); /* button shrinks slightly */
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Number Guessing Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f8ff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 50px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    .game-container {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 20px 30px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      max-width: 400px;
+      text-align: center;
+    }
+
+    input[type="number"] {
+      padding: 10px;
+      width: 60px;
+      font-size: 16px;
+      margin: 10px 0;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      background-color: #4caf50;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+      margin: 5px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .reset-btn {
+      background-color: #f44336;
+    }
+
+    .reset-btn:hover {
+      background-color: #d32f2f;
+    }
+
+    .message {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+
+    .score {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Number Guessing Game</h1>
+  <div class="game-container">
+    <p>Guess a number between 1 and 10</p>
+    <input type="number" id="guess" min="1" max="10" />
+    <div>
+      <button onclick="checkGuess()">Submit</button>
+      <button class="reset-btn" onclick="resetGame()">Reset Game</button>
+    </div>
+    <div class="message" id="message"></div>
+    <div class="score" id="score">Score: 0</div>
+  </div>
+
+  <script>
+    let score = 0;
+
+    function checkGuess() {
+      const userGuess = parseInt(document.getElementById("guess").value);
+      const randomNumber = Math.floor(Math.random() * 10) + 1;
+      const message = document.getElementById("message");
+
+      if (!userGuess || userGuess < 1 || userGuess > 10) {
+        message.textContent = "Please enter a number between 1 and 10.";
+        return;
+      }
+
+      if (userGuess === randomNumber) {
+        score++;
+        message.textContent = `🎉 Correct! The number was ${randomNumber}.`;
+      } else {
+        message.textContent = `❌ Wrong. The number was ${randomNumber}.`;
+      }
+
+      document.getElementById("score").textContent = `Score: ${score}`;
+      document.getElementById("guess").value = "";
+    }
+
+    function resetGame() {
+      score = 0;
+      document.getElementById("score").textContent = "Score: 0";
+      document.getElementById("message").textContent = "";
+      document.getElementById("guess").value = "";
+    }
+  </script>
+</body>
+</html>
